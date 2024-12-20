@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { darkTheme } from "./theme.ts";
+import { RecoilRoot } from "recoil";
 
 // global styles
 export const GlobalStyle = createGlobalStyle`
@@ -72,10 +73,11 @@ a {
 
 createRoot(document.getElementById("root")!).render(
   //<StrictMode>
-  <ThemeProvider theme={darkTheme}>
-    <GlobalStyle />
-    <App />
-  </ThemeProvider>
-
+  <RecoilRoot>
+    <ThemeProvider theme={darkTheme}>
+      <GlobalStyle />
+      <App />
+    </ThemeProvider>
+  </RecoilRoot>
   //</StrictMode>
 );

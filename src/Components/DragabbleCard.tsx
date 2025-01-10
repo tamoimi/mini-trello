@@ -1,3 +1,4 @@
+import React from "react";
 import { Draggable } from "react-beautiful-dnd";
 import styled from "styled-components";
 
@@ -25,4 +26,4 @@ const DragabbleCard = ({ toDo, index }: IDranabbleCardProps) => {
   );
 };
 
-export default DragabbleCard;
+export default React.memo(DragabbleCard);
